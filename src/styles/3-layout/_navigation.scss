@@ -1,0 +1,58 @@
+.navigation{
+    display: flex;
+    background-color: black;
+    padding:.5em;
+    
+    @include laptop{
+        display: grid;
+        grid-template-columns: 1fr;
+        justify-content: center;
+
+    }
+    
+    .navigation__brand{
+        display: flex;
+        @include laptop{
+            display: flex;
+            justify-content: center;
+            margin: auto;
+            text-align: center;
+        }
+        p{
+            margin: 0;
+            padding: .1em .5em;
+            font-size: 2em;
+            display: inline-block;
+            color: white;
+          
+        }
+        .navigation__image{
+            width: 20%;
+         
+          
+        }
+      
+    }
+    .navigation__list{
+        margin-left: auto;
+        @include laptop{
+         margin: auto;
+        }
+        .navigation__item{
+            color:white;
+            float: left;
+            padding:1em 1em;
+            cursor: pointer;
+            transition: .5s;
+            &:hover{
+                background-color: greenyellow;
+                color:black;
+            }
+            .navigation__link{
+                color:inherit;
+                text-decoration: none;
+            }
+        }
+    }
+   
+}
