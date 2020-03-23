@@ -20,7 +20,7 @@ class App extends Component {
     this.state ={}
 
 
-    this.performSearch()
+    this.performSearch('latest')
 
   }
 
