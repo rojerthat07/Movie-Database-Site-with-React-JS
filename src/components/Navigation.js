@@ -14,13 +14,13 @@ export class Navigation extends Component {
 
                 <div className="navigation__list">
                     <div className="navigation__item">
-                       <a href="#" className="navigation__link">HOME</a>
+                       <a href="/public/index.html" className="navigation__link">HOME</a>
                     </div>
                     <div className="navigation__item">
-                       <a href="#" className="navigation__link">ABOUT</a>
+                       <a href="/public/index.html" className="navigation__link">ABOUT</a>
                     </div>
                     <div className="navigation__item">
-                       <a href="#" className="navigation__link">FACTS</a>
+                       <a href="/public/index.html" className="navigation__link">FACTS</a>
                     </div>
                 </div>
                 
