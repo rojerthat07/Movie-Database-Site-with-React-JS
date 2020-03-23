@@ -20,11 +20,14 @@
        
     
         .movies__item{
+       
   
             .movies__data{
                 padding:.5em;
                 img{
-                    width: 100%;
+                    width: 50%;
+                    display: block;
+                    margin: auto;
                 }
                 .movies__title{
                     font-size: 1.2em;
