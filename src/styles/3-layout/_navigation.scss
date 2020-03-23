@@ -37,13 +37,16 @@
         margin-left: auto;
         @include laptop{
          margin: auto;
+         
         }
         .navigation__item{
             color:white;
             float: left;
             padding:1em 1em;
+            margin:0 .5em;
             cursor: pointer;
             transition: .5s;
+            border-radius: 5px;
             &:hover{
                 background-color: greenyellow;
                 color:black;
