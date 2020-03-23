@@ -2,11 +2,14 @@ import React, { Component } from 'react'
 //Styles
 import './main.scss'
 //Components
-import Navigation from './components/Navigation'
 import MovieRow from './components/MovieRow'
+//layout
+import Navigation from './components/Navigation'
 import Footer from './components/Footer'
-//Images
-import placeholderImage from './images/universe-site-photo-1.png'
+import Header from './components/Header'
+//pages
+import About from './components/About'
+
 
 class App extends Component {
 
@@ -16,31 +19,31 @@ class App extends Component {
     const movies = [
       {
       id: 0,
-      poster_src: {placeholderImage},
+      poster_src: '',
       title:"Avengers: Infinity War",
       overview: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis natus eum, architecto quasi cupiditate itaque provident magni nobis placeat obcaecati numquam aliquid quo voluptate id voluptates, dignissimos ullam voluptas praesentium!"
       },
       {
         id: 1,
-        poster_src: {placeholderImage},
+        poster_src: '',
         title:"Avengers: Endgame",
         overview: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis natus eum, architecto quasi cupiditate itaque provident magni nobis placeat obcaecati numquam aliquid quo voluptate id voluptates, dignissimos ullam voluptas praesentium!"
         },
         {
           id: 2,
-          poster_src: {placeholderImage},
+          poster_src: '',
           title:"Spiderman",
           overview:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis natus eum, architecto quasi cupiditate itaque provident magni nobis placeat obcaecati numquam aliquid quo voluptate id voluptates, dignissimos ullam voluptas praesentium!"
           },
           {
             id: 3,
-            poster_src: {placeholderImage},
+            poster_src:'',
             title:"Superman",
             overview:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis natus eum, architecto quasi cupiditate itaque provident magni nobis placeat obcaecati numquam aliquid quo voluptate id voluptates, dignissimos ullam voluptas praesentium!"
             },
             {
               id: 4,
-              poster_src: {placeholderImage},
+              poster_src: '',
               title:"Justice League",
               overview: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis natus eum, architecto quasi cupiditate itaque provident magni nobis placeat obcaecati numquam aliquid quo voluptate id voluptates, dignissimos ullam voluptas praesentium!"
               }
@@ -64,7 +67,7 @@ class App extends Component {
     return (
       <div>
         <Navigation />
-
+      <Header />
 
 
 
@@ -80,7 +83,7 @@ class App extends Component {
         </div>
         <Footer />
       
-
+      <About />
 
       </div>
     )

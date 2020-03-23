@@ -2,6 +2,9 @@
     display: flex;
     background-color: black;
     padding:.5em;
+    position: sticky;
+    top:0;
+    z-index: 2;
     
     @include laptop{
         display: grid;
@@ -19,9 +22,9 @@
             text-align: center;
         }
         p{
-            margin: 0;
+            margin: .3em 0 0 0;
             padding: .1em .5em;
-            font-size: 2em;
+            font-size: 1.3em;
             display: inline-block;
             color: white;
           
@@ -34,15 +37,15 @@
       
     }
     .navigation__list{
-        margin-left: auto;
+        margin: .3em 0 0 auto;
         @include laptop{
-         margin: auto;
+         margin: 1em auto 0 auto;
          
         }
         .navigation__item{
             color:white;
             float: left;
-            padding:1em 1em;
+            padding:.7em 1em;
             margin:0 .5em;
             cursor: pointer;
             transition: .5s;
@@ -54,6 +57,14 @@
             .navigation__link{
                 color:inherit;
                 text-decoration: none;
+            }
+        }
+
+        .navigation__item--login{
+            border: 2px solid orange;
+            &:hover{
+                background-color: orange;
+                color:black;
             }
         }
     }

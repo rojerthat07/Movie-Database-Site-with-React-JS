@@ -7,7 +7,7 @@ export class Navigation extends Component {
             <div className="navigation">
 
             <div className="navigation__brand">
-              <img className="navigation__image" src={brand} alt=""/>  <p>Movie Database</p>
+              <img className="navigation__image" src={brand} alt=""/>  <p>mr. MovieDB Theater</p>
 
             </div>
 
@@ -19,8 +19,9 @@ export class Navigation extends Component {
                     <div className="navigation__item">
                        <a href="/public/index.html" className="navigation__link">ABOUT</a>
                     </div>
-                    <div className="navigation__item">
-                       <a href="/public/index.html" className="navigation__link">FACTS</a>
+                    
+                    <div className="navigation__item navigation__item--login">
+                       <a href="/public/index.html" className="navigation__link ">LOGIN</a>
                     </div>
                 </div>
                 
