@@ -71,7 +71,7 @@ class App extends Component {
         <form className="search-bar">
         <input className="search-bar__input" placeholder="Enter Movie Name" type="text"/>
         
-        <input type="submit" className="search-bar__button" value="Seach "/>
+        <input type="submit" className="search-bar__button" value="Search "/>
         </form>
         
 

@@ -4,9 +4,13 @@
     align-content: center;
     justify-content: center;
     grid-gap: 1em;
-    
     width:90%;
     margin:  auto;
+
+    @include mini-laptop{
+        grid-template-columns: 8fr 2fr;
+    }
+    
  
     .search-bar__input{
         width: 100%;
@@ -16,6 +20,10 @@
       
         border: 1px solid rgb(231, 231, 231);
         border-radius: 5px;
+        @include tablet{
+            font-size: 1.3em;
+        }
+
     }
     
     .search-bar__button{
@@ -24,10 +32,14 @@
         border: none;
         cursor: pointer;
         border-radius: 3px;
+        text-transform: uppercase;
 
         margin: 1.5em auto;
         &:hover{
             background-color: rgb(228, 228, 228);
+        }
+        @include tablet{
+            margin: 1.3em auto;
         }
        
     }
