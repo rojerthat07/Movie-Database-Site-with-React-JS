@@ -6,6 +6,7 @@
     width:90%;
     overflow: hidden;
     margin: 2em auto;
+    padding:3em 1em;
     @include mini-laptop{
         grid-template-columns: 1fr 1fr;
     }
@@ -15,7 +16,8 @@
     .movies__row{
         border-radius: 5px;
         border: 1px solid rgb(240, 240, 240);
-        padding:1em;
+        padding:.5em 1em;
+        position: relative;
         height: 100%;
        
     
@@ -32,10 +34,14 @@
                 .movies__title{
                     font-size: 1.2em;
                     margin:.5em 0;
+                    min-width: 40px;
                 }
                 .movies__overview{
                     font-size: .8em;
                     font-family: font("font7");
+                    min-height: 120px;  
+                    
+                    
                 }
 
                
@@ -45,6 +51,7 @@
         }
 
         .movies__play-button, .movies__view-button{
+         
             border: none;
             padding:.5em;
             border-radius: 5px;
@@ -55,12 +62,14 @@
         .movies__play-button{
             background-color: yellowgreen;
             transition: .5s;
+         
             &:hover{
                 background-color: red;
                 color: white;
             }
         }
         .movies__view-button{
+           
             &:hover{
                 background-color: rgb(228, 228, 228);
                
