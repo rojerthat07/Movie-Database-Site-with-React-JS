@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/Movie-Database-Site-with-React-JS/static/css/main.fb949359.chunk.css",
+    "main.js": "/Movie-Database-Site-with-React-JS/static/js/main.52705e4f.chunk.js",
+    "main.js.map": "/Movie-Database-Site-with-React-JS/static/js/main.52705e4f.chunk.js.map",
+    "runtime-main.js": "/Movie-Database-Site-with-React-JS/static/js/runtime-main.a1b5a495.js",
+    "runtime-main.js.map": "/Movie-Database-Site-with-React-JS/static/js/runtime-main.a1b5a495.js.map",
+    "static/js/2.a1c16943.chunk.js": "/Movie-Database-Site-with-React-JS/static/js/2.a1c16943.chunk.js",
+    "static/js/2.a1c16943.chunk.js.map": "/Movie-Database-Site-with-React-JS/static/js/2.a1c16943.chunk.js.map",
+    "index.html": "/Movie-Database-Site-with-React-JS/index.html",
+    "precache-manifest.9785ad1a939490bc78ee51ab72f61cab.js": "/Movie-Database-Site-with-React-JS/precache-manifest.9785ad1a939490bc78ee51ab72f61cab.js",
+    "service-worker.js": "/Movie-Database-Site-with-React-JS/service-worker.js",
+    "static/css/main.fb949359.chunk.css.map": "/Movie-Database-Site-with-React-JS/static/css/main.fb949359.chunk.css.map",
+    "static/js/2.a1c16943.chunk.js.LICENSE.txt": "/Movie-Database-Site-with-React-JS/static/js/2.a1c16943.chunk.js.LICENSE.txt",
+    "static/media/headerbg.jpg": "/Movie-Database-Site-with-React-JS/static/media/headerbg.5d17c4aa.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.a1b5a495.js",
+    "static/js/2.a1c16943.chunk.js",
+    "static/css/main.fb949359.chunk.css",
+    "static/js/main.52705e4f.chunk.js"
+  ]
+}
