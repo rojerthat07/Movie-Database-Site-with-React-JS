@@ -10,17 +10,17 @@ export class Navigation extends Component {
               <img className="navigation__image" src={brand} alt=""/>  <p>mr. MovieDB Theater</p>
             </div>
                 <div className="navigation__list">
-                <Link className="navigation__link " to="/">
+                <Link className="navigation__link " to="/Movie-Database-Site-with-React-JS">
                     <div className="navigation__item">
                        <div>HOME</div>
                     </div>
                     </Link>
-                    <Link className="navigation__link" to="/about">
+                    <Link className="navigation__link" to="/Movie-Database-Site-with-React-JS/about">
                     <div className="navigation__item">
                        <div>ABOUT</div>
                     </div>
                     </Link>
-                    <Link className="navigation__link " to="/">
+                    <Link className="navigation__link " to="/Movie-Database-Site-with-React-JS/login">
                     <div className="navigation__item navigation__item--login">
                        <div>LOGIN</div>
                     </div>

@@ -80,7 +80,7 @@ class App extends Component {
       <div>
         <Navigation />
       
-      <Route path="/" exact >
+      <Route path="/Movie-Database-Site-with-React-JS" exact >
       <Header />
       <div className="main">
         <form className="search-bar" onSubmit={this.submitHandler}>
@@ -93,11 +93,11 @@ class App extends Component {
         </div>
         </Route>
     
-        <Route path="/about" component={About}/> 
+        <Route path="/Movie-Database-Site-with-React-JS/about" component={About}/> 
       
-
+        <Route path="/Movie-Database-Site-with-React-JS/login" component={Login}/> 
         <Footer />
-        <Login />
+ 
       </div>
       </Router>
       
