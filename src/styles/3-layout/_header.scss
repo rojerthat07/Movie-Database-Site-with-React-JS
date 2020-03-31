@@ -1,5 +1,5 @@
 .header{
-    height: 70vh;
+    height: 30vh;
     position: relative;
     display: grid;
     text-align: left;
@@ -11,11 +11,9 @@
     
     .header__information{
         padding:1em;
-        margin-top: 15%;
+        margin-top: 2%;
         width:50%;
-        @include laptop{
-            margin-top: 12%;
-        }
+     
         @include mini-laptop{
             margin-top: 0;
             width: 80%;
@@ -24,10 +22,10 @@
         .header__title{
             font-family: font("font4");
             color:#ffffff;
-            font-size: 3.5em;
+            font-size: 2.5em;
             text-transform: uppercase;
             @include tablet{
-                font-size: 2.5em;
+                font-size: 1.4em;
             }
         }
         .header__text{

@@ -21,7 +21,7 @@
         border: 1px solid rgb(231, 231, 231);
         border-radius: 5px;
         @include tablet{
-            font-size: 1.3em;
+            font-size: 1em;
         }
 
     }
@@ -39,7 +39,8 @@
             background-color: rgb(228, 228, 228);
         }
         @include tablet{
-            margin: 1.3em auto;
+            font-size: .8em;
+            margin: 1.2em auto;
         }
        
     }

@@ -12,6 +12,8 @@
     }
     @include tablet{
         grid-template-columns: 1fr;
+        text-align: center;
+        width:70%;
     }
     .movies__row{
         border-radius: 5px;
@@ -30,6 +32,9 @@
                     width: 50%;
                     display: block;
                     margin: auto;
+                    @include tablet{
+                        width: 40%;
+                    }
                 }
                 .movies__title{
                     font-size: 1.2em;
@@ -39,7 +44,11 @@
                 .movies__overview{
                     font-size: .8em;
                     font-family: font("font7");
-                    min-height: 120px;  
+                    min-height: 120px; 
+                    @include tablet{
+                        font-size: .8em;
+                        min-height: 100px; 
+                    } 
                     
                     
                 }
