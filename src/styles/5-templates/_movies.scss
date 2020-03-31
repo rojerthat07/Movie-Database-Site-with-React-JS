@@ -43,8 +43,9 @@
                 }
                 .movies__overview{
                     font-size: .8em;
-                    font-family: font("font7");
+                  
                     min-height: 120px; 
+                    font-family: font("font2");
                     @include tablet{
                         font-size: .8em;
                         min-height: 100px; 
