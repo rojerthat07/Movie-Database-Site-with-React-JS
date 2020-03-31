@@ -1,11 +1,12 @@
 import React, { Component } from 'react'
-//importers
+//modules
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom'
 import $ from 'jquery'
 //Styles
 import './main.scss'
 //Components
 import MovieRow from './components/MovieRow'
+import Login from './components/Login'
 //layout
 import Navigation from './components/Navigation'
 import Footer from './components/Footer'
@@ -96,6 +97,7 @@ class App extends Component {
       
 
         <Footer />
+        <Login />
       </div>
       </Router>
       

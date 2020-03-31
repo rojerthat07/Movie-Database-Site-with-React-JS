@@ -6,7 +6,7 @@ function About() {
         <div className="about">
             <div className="about__heading">ABOUT</div>
  
-            <div className="about__text">This site is built with React JS and using the MovieDB API for fetching data. This project is part of the portfolio of Jer Carlo D. Catallo.</div>
+            <div className="about__text">This site is built with React JS and using The MovieDB API for fetching data. This project is part of the portfolio of Jer Carlo D. Catallo.</div>
           
             <img src={siteLogo} alt=""/>
            

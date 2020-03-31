@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import placeholderImage from '../images/universe-site-photo-1.png'
+
 
 
 class MovieRow extends Component {
