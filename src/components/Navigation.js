@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import brand from '../images/tmdb.png'
+import {Link} from 'react-router-dom'
 
 export class Navigation extends Component {
     render() {
@@ -14,14 +15,20 @@ export class Navigation extends Component {
 
                 <div className="navigation__list">
                     <div className="navigation__item">
-                       <a href="/public/index.html" className="navigation__link">HOME</a>
+                        <Link className="navigation__link " to="/">
+                       <div>HOME</div>
+                       </Link>
                     </div>
                     <div className="navigation__item">
-                       <a href="/public/index.html" className="navigation__link">ABOUT</a>
+                    <Link className="navigation__link" to="/about">
+                       <div>ABOUT</div>
+                       </Link>
                     </div>
                     
                     <div className="navigation__item navigation__item--login">
-                       <a href="/public/index.html" className="navigation__link ">LOGIN</a>
+                    <Link className="navigation__link " to="/">
+                       <div>LOGIN</div>
+                       </Link>
                     </div>
                 </div>
                 

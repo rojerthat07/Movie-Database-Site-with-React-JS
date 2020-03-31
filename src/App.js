@@ -74,27 +74,30 @@ class App extends Component {
 
   render() {
     return (
+      <Router>
       <div>
         <Navigation />
-        <Header />
-
+      
+      <Route path="/" exact >
+      <Header />
       <div className="main">
-
         <form className="search-bar" onSubmit={this.submitHandler}>
         <input onChange={this.searchChangeHandler} className="search-bar__input" placeholder="Enter Movie Name" type="text"/>
         <input  type="submit" className="search-bar__button" value="Search "/>
         </form>
-        
         <div className="movies">
         {this.state.rows}
         </div>
-        
         </div>
+        </Route>
+    
+        <Route path="/about" component={About}/> 
+      
 
         <Footer />
-        <About />
-
       </div>
+      </Router>
+      
     )
   }
 }
