@@ -5,7 +5,7 @@ import placeholderImage from '../images/universe-site-photo-1.png'
 class MovieRow extends Component {
 
   movieView = () =>{
-    console.log(this.props.movie.id)
+
     const url = "https://www.themoviedb.org/movie/" + this.props.movie.id
     window.open(url)
     
@@ -72,7 +72,7 @@ class MovieRow extends Component {
                 </div> 
               </div>
 
-            <button className="movies__play-button">Play</button>
+            <button onClick={this.movieView} className="movies__play-button">Play</button>
             <button onClick={this.movieView} className="movies__view-button" >View</button>
 
           </div>

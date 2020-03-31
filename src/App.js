@@ -45,6 +45,7 @@ class App extends Component {
           movie.poster_src = (movie.poster_path == null ? placeholder : "https://image.tmdb.org/t/p/w185_and_h278_bestv2" + movie.poster_path)//"https://image.tmdb.org/t/p/w185_and_h278_bestv2" + movie.poster_path
           const movieRow = <MovieRow key={movie.id} movie={movie} />
           movieRows.push(movieRow)
+          console.log(movie)
          
         })
 

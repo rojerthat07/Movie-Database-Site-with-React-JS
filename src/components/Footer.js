@@ -3,7 +3,7 @@ import React from 'react'
 function Footer() {
     return (
         <div className="footer">
-           <p>© jercarlocatallo.com, 2020</p>
+           <p>© 2020 Jer Carlo Catallo | All rights reserved. </p>
         </div>
     )
 }
