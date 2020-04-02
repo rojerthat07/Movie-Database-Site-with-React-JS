@@ -18,6 +18,9 @@
             width: 100%;
             padding:.5em 0;
             border-bottom: 1px solid black;
+            @include tablet{
+                font-size: 1em;
+            }
             
         }
         input{
@@ -33,6 +36,9 @@
             
         }
         p{
+            @include tablet{
+                font-size: .9em;
+            }
             span{
                 text-decoration: none;
                 color:rgb(204, 180, 45);
@@ -51,6 +57,9 @@
             padding:.5em 3em;
             margin:1em;
             cursor: pointer;
+            @include tablet{
+                font-size: .8em;
+            }
             &:hover{
                 color:rgb(32, 194, 11);
             }
