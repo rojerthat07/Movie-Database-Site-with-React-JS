@@ -40,7 +40,6 @@
         margin: .3em 0 0 auto;
         @include laptop{
          margin: 1em auto 0 auto;
-         
         }
         .navigation__item{
             color:white;
@@ -50,6 +49,9 @@
             cursor: pointer;
             transition: .5s;
             border-radius: 5px;
+            @include tablet{
+                font-size: .8em;
+            }
             &:hover{
                 background-color: greenyellow;
                 color:black;

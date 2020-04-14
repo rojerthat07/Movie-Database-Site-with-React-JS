@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 //modules
-import {BrowserRouter as Router, Switch, Route} from 'react-router-dom'
+import {BrowserRouter as Router, Route} from 'react-router-dom'
 import $ from 'jquery'
 //Styles
 import './main.scss'
@@ -37,7 +37,7 @@ class App extends Component {
     $.ajax({
       url: urlString,
       success: (searchResults) =>{
-        console.log("Fetched data succesfully")
+ 
 
         const results = searchResults.results
         var movieRows =[]
@@ -46,7 +46,7 @@ class App extends Component {
           movie.poster_src = (movie.poster_path == null ? placeholder : "https://image.tmdb.org/t/p/w185_and_h278_bestv2" + movie.poster_path)//"https://image.tmdb.org/t/p/w185_and_h278_bestv2" + movie.poster_path
           const movieRow = <MovieRow key={movie.id} movie={movie} />
           movieRows.push(movieRow)
-          console.log(movie)
+      
          
         })
 

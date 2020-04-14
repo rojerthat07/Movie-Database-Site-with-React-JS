@@ -14,7 +14,7 @@
         text-align: center;
     }
     .about__heading{
-        font-size: 5em;
+        font-size: 3em;
         margin:.3em 0;
         @include mini-laptop{
             font-size: 3em;
@@ -26,23 +26,24 @@
    
 
     .about__text{
-        font-size: 3em;
+        font-size: 2em;
         font-family: font("font1");
         @include mini-laptop{
-            font-size: 2em;
+            font-size: 1.5em;
         }
         @include tablet{
             font-size: 1.3em;
         }
     }
     img{
-        margin: 2em auto;
+        margin: 2em 0;
         width:30%;
         @include mini-laptop{
             width: 70%;
         }
         @include tablet{
             width: 60%;
+            margin: 2em auto;
         }
     }
 }
