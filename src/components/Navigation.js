@@ -7,7 +7,7 @@ export class Navigation extends Component {
         return (
             <div className="navigation">
             <div className="navigation__brand">
-              <img className="navigation__image" src={brand} alt=""/>  <p>mr. MovieDB Theater</p>
+              <img className="navigation__image" src={brand} alt=""/>  <p>MovieDB Theater</p>
             </div>
                 <div className="navigation__list">
                 <Link className="navigation__link " to="/Movie-Database-Site-with-React-JS">

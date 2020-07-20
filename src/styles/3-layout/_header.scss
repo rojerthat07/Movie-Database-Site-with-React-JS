@@ -20,7 +20,7 @@
             margin: auto;
         }
         .header__title{
-            font-family: font("font4");
+            font-family: font("font3");
             color:#ffffff;
             font-size: 2.5em;
             text-transform: uppercase;
@@ -30,7 +30,8 @@
         }
         .header__text{
             margin:1em 0;
-            font-family: font("font1");
+            font-family: font("font3");
+            font-weight: lighter;
             color: #ffffff;
             @include tablet{
                 font-size: .9em;
