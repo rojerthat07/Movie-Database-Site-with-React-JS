@@ -6,13 +6,13 @@ import $ from 'jquery'
 import './main.scss'
 //Components
 import MovieRow from './components/MovieRow'
-import Login from './components/Login'
+
 //layout
 import Navigation from './components/Navigation'
 import Footer from './components/Footer'
 import Header from './components/Header'
 //pages
-import About from './components/About'
+
 import placeholder from './images/placeholderImage.jpg'
 
 
@@ -92,10 +92,7 @@ class App extends Component {
         </div>
         </div>
         </Route>
-    
-        <Route path="/Movie-Database-Site-with-React-JS/about" component={About}/> 
-      
-        <Route path="/Movie-Database-Site-with-React-JS/login" component={Login}/> 
+
         <Footer />
  
       </div>

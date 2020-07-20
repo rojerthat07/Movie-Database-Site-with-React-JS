@@ -15,16 +15,7 @@ export class Navigation extends Component {
                        <div>HOME</div>
                     </div>
                     </Link>
-                    <Link className="navigation__link" to="/Movie-Database-Site-with-React-JS/about">
-                    <div className="navigation__item">
-                       <div>ABOUT</div>
-                    </div>
-                    </Link>
-                    <Link className="navigation__link " to="/Movie-Database-Site-with-React-JS/login">
-                    <div className="navigation__item navigation__item--login">
-                       <div>LOGIN</div>
-                    </div>
-                    </Link>
+                 
                 </div>
             </div>
         )
