@@ -60,20 +60,22 @@ class MovieRow extends Component {
             <div className="movies__row">
              
           <div className="movies__item">
+
             <div className="movies__data">
               <img src={this.props.movie.poster_src} alt="poster"/>
             </div>
 
             <div className="movies__data">
               <div className="movies__title" title={this.props.movie.title}>{this.state.titleReplace}</div>
+              
               <div className="movies__overview">
-               
                 {this.state.overviewReplace}
                 </div> 
+
+                <button onClick={this.movieView} className="movies__play-button">Play</button>
+            <button onClick={this.movieView} className="movies__view-button" >View</button>
               </div>
 
-            <button onClick={this.movieView} className="movies__play-button">Play</button>
-            <button onClick={this.movieView} className="movies__view-button" >View</button>
 
           </div>
  
