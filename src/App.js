@@ -4,12 +4,9 @@ import {BrowserRouter as Router, Route} from 'react-router-dom'
 import $ from 'jquery'
 //Styles
 import './main.scss'
-//Components
-import MovieRow from './components/MovieRow'
 
 //layout
 import Footer from './components/Footer'
-import Header from './components/Header'
 //pages
 
 import placeholder from './images/placeholderImage.jpg'
@@ -40,7 +37,6 @@ class App extends Component {
  
         console.log(searchResults)
         const results = searchResults.results
-        var movieRows =[]
 
         results.forEach( movie =>{
           this.setState({
@@ -57,19 +53,15 @@ class App extends Component {
             vote_average: movie.vote_average,
             runtime: movie.runtime,
             revenue: movie.revenue,
-            backdrop: movie.backdrop_path
+            backdrop: (movie.backdrop_path == null ? placeholder : "https://image.tmdb.org/t/p/w1280_and_h720_bestv2" + movie.backdrop_path)
           })
           
-          movie.poster_src = (movie.poster_path == null ? placeholder : "https://image.tmdb.org/t/p/w185_and_h278_bestv2" + movie.poster_path)//"https://image.tmdb.org/t/p/w185_and_h278_bestv2" + movie.poster_path
-          const movieRow = <MovieRow key={movie.id} movie={movie} />
-          movieRows.push(movieRow)
+
       
          
         })
 
-        this.setState({
-          rows:movieRows
-        })
+     
       },
       error: (xhr,status,err) =>{
         console.error("Failed to fetch data")
@@ -92,21 +84,24 @@ class App extends Component {
  
 
   render() {
+    const jer ={
+      background:'linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url('+this.state.backdrop+')'
+    }
     return (
       <Router>
       <div>
     
       
       <Route path="/Movie-Database-Site-with-React-JS" exact >
-      <Header />
-      <div className="main">
+  
+      <div className="main" style={jer}>
         <form className="search-bar" onSubmit={this.submitHandler}>
         <input onChange={this.searchChangeHandler} className="search-bar__input" placeholder="Enter Movie Name" type="text"/>
         <input  type="submit" className="search-bar__button" value="Search "/>
         </form>
         <div className="movies">
         <div className="movies__row">
-             
+         
              <div className="movies__item">
    
                <div className="movies__data">
