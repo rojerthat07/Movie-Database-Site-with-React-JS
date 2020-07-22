@@ -8,7 +8,6 @@ import './main.scss'
 import MovieRow from './components/MovieRow'
 
 //layout
-import Navigation from './components/Navigation'
 import Footer from './components/Footer'
 import Header from './components/Header'
 //pages
@@ -50,7 +49,7 @@ class App extends Component {
             tagline: movie.tagline,
             overview: movie.overview,
             homepage: movie.homepage,
-            poster_src: movie.poster_path,
+            poster_src: (movie.poster_path == null ? placeholder : "https://image.tmdb.org/t/p/w185_and_h278_bestv2" + movie.poster_path),
             production: movie.production_companies,
             production_countries: movie.production_countries,
             genre: movie.genres,
@@ -96,7 +95,7 @@ class App extends Component {
     return (
       <Router>
       <div>
-        <Navigation />
+    
       
       <Route path="/Movie-Database-Site-with-React-JS" exact >
       <Header />
