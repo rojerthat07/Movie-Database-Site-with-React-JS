@@ -15,7 +15,7 @@ import Header from './components/Header'
 
 import placeholder from './images/placeholderImage.jpg'
 
-
+console.log("ubuntu push test")
 class App extends Component {
 
   constructor(props){
