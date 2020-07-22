@@ -38,7 +38,7 @@ class App extends Component {
       url: urlString,
       success: (searchResults) =>{
  
-
+        console.log(searchResults)
         const results = searchResults.results
         var movieRows =[]
 

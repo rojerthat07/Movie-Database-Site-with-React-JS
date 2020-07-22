@@ -18,19 +18,19 @@
     .movies__row{
         border-radius: 5px;
         border: 1px solid rgb(240, 240, 240);
-        padding:.5em 1em;
         position: relative;
-        height: 100%;
+        width: 80%;
+        margin: auto;
+        height: auto;
        
     
         .movies__item{
-       display: grid;
-       grid-template-columns: 1fr 1fr;
+            display: grid;
+            grid-template-columns: 1fr 2fr;
   
-            .movies__data{
-                padding:.5em;
+            .movies__data{  
                 img{
-                    width: 50%;
+                    width: 100%;
                     display: block;
                     margin: auto;
                     @include tablet{
@@ -38,13 +38,14 @@
                     }
                 }
                 .movies__title{
-                    font-size: 1.2em;
+                    font-size: 3em;
                     margin:.5em 0;
                     min-width: 40px;
+                    font-weight: bold;
+                    text-transform: uppercase;
                 }
                 .movies__overview{
-                    font-size: .8em;
-                  
+                    font-size: 1em;
                     min-height: 120px; 
                     font-family: font("font7");
                     @include tablet{
