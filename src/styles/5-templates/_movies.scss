@@ -17,7 +17,7 @@
     }
     .movies__row{
         border-radius: 5px;
-        border: 1px solid rgb(240, 240, 240);
+  
         position: relative;
         width: 80%;
         margin: auto;
@@ -59,8 +59,10 @@
                        
                 }
                 .movies__stats{
+                    font-size: 1.5em;
                     display: grid;
                     grid-template-columns: 1fr 1fr;
+                    font-weight: lighter;
                     .movies__stats-data{
                         span{
                             display: block;

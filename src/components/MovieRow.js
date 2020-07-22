@@ -4,10 +4,6 @@ import React, { Component } from 'react'
 
 class MovieRow extends Component {
 
-  movieView = () =>{
-    const url = "https://www.themoviedb.org/movie/" + this.props.movie.id
-    window.open(url)
-  }
 
     render() {
         return (

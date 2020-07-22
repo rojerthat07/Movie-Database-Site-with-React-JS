@@ -22,7 +22,8 @@ class App extends Component {
     super(props)
 
     this.state ={
-      searchTerm: 'avengers'
+      searchTerm: 'AVENGERS: ENDGAME',
+      
     }
 
 
@@ -43,6 +44,23 @@ class App extends Component {
         var movieRows =[]
 
         results.forEach( movie =>{
+          this.setState({
+            movieID: movie.id,
+            original_title: movie.original_title,
+            tagline: movie.tagline,
+            overview: movie.overview,
+            homepage: movie.homepage,
+            poster_src: movie.poster_path,
+            production: movie.production_companies,
+            production_countries: movie.production_countries,
+            genre: movie.genres,
+            release: movie.release_date,
+            vote_average: movie.vote_average,
+            runtime: movie.runtime,
+            revenue: movie.revenue,
+            backdrop: movie.backdrop_path
+          })
+          
           movie.poster_src = (movie.poster_path == null ? placeholder : "https://image.tmdb.org/t/p/w185_and_h278_bestv2" + movie.poster_path)//"https://image.tmdb.org/t/p/w185_and_h278_bestv2" + movie.poster_path
           const movieRow = <MovieRow key={movie.id} movie={movie} />
           movieRows.push(movieRow)
@@ -88,7 +106,62 @@ class App extends Component {
         <input  type="submit" className="search-bar__button" value="Search "/>
         </form>
         <div className="movies">
-        {this.state.rows}
+        <div className="movies__row">
+             
+             <div className="movies__item">
+   
+               <div className="movies__data">
+                 <img src={this.state.poster_src} alt="poster"/>
+               </div>
+   
+               <div className="movies__data">
+   
+                 <div className="movies__description">
+                 <div className="movies__title" title={this.state.original_title}>{this.state.original_title}</div>
+                 
+                 <div className="movies__overview">
+                   {this.state.overview}
+                   </div> 
+                 <div className="movies__stats">
+                   <div className="movies__stats-data">
+                   Vote average:  
+                 
+                 <span>
+                 {this.state.vote_average}
+                 </span>
+                   </div>
+                   <div className="movies__stats-data">
+                   Release Date:  
+                 
+                 <span>
+                 {this.state.release}
+                 </span>
+                   </div>
+                   <div className="movies__stats-data">
+                   Language:  
+                 
+                 <span>
+                   {this.state.release}
+                 </span>
+                   </div>
+                   <div className="movies__stats-data">
+                   Popularity:  
+                   <span>
+                   {this.state.release}
+                   </span>
+                 
+                   </div>
+                   
+                 </div>
+           
+                 </div>
+                 
+              
+                 </div>
+   
+             </div>
+    
+         </div>
         </div>
         </div>
         </Route>
