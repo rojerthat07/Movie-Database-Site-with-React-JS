@@ -21,27 +21,52 @@ class App extends Component {
       searchTerm: 'AVENGERS: ENDGAME',
     }
 
-    this.inputRef = React.createRef()
-
+  this.inputRef = React.createRef()
 
   this.performSearch()
-
   }
 
 
+//Initial search for the movie
   performSearch(searchTerm = this.state.searchTerm){
-
+    console.log("Perform Search", searchTerm)
     const urlString = 'https://api.themoviedb.org/3/search/movie?api_key=ad8a2a3e22a31453b48785c80f462afd&query='+ searchTerm
     $.ajax({
       url: urlString,
       success: (searchResults) =>{
  
-        console.log(searchResults)
         const results = searchResults.results
 
         results.forEach( movie =>{
+
           this.setState({
-            movieID: movie.id,
+            movieID: movie.id
+          })
+        
+        })
+
+      },
+      error: (xhr,status,err) =>{
+        console.error("Failed to fetch data in Perform Search")
+      }
+    })
+
+
+  }
+
+
+//Search for more info
+  finalSeach = (searchID = this.state.movieID) =>{
+
+    const urlString = `https://api.themoviedb.org/3/movie/${this.state.movieID}?api_key=ad8a2a3e22a31453b48785c80f462afd`
+    $.ajax({
+      url: urlString,
+      success: (searchResults) =>{
+
+        const results = [searchResults]
+
+        results.forEach( movie =>{
+          this.setState({
             original_title: movie.original_title,
             tagline: movie.tagline,
             overview: movie.overview,
@@ -56,19 +81,17 @@ class App extends Component {
             revenue: movie.revenue,
             backdrop: (movie.backdrop_path == null ? placeholder : "https://image.tmdb.org/t/p/w1280_and_h720_bestv2" + movie.backdrop_path)
           })
-          
-
-      
          
         })
 
-     
       },
       error: (xhr,status,err) =>{
-        console.error("Failed to fetch data")
+        console.error("Failed to fetch data in Final Search")
       }
     })
+
   }
+
 
   searchChangeHandler = (e) =>{
     const searchTerm = e.target.value
@@ -85,8 +108,12 @@ class App extends Component {
 
 
   componentDidMount(){
- 
     this.inputRef.current.focus()
+  }
+
+  //Render after fetching the movie ID to be able successfully excecute the finalSearch
+  componentDidUpdate(){
+    this.finalSeach()
   }
  
 
@@ -94,8 +121,6 @@ class App extends Component {
     const jer ={
       background:'linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url('+this.state.backdrop+')'
     }
-
-   
 
     return (
       <Router>
