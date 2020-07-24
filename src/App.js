@@ -45,7 +45,7 @@ class App extends Component {
             tagline: movie.tagline,
             overview: movie.overview,
             homepage: movie.homepage,
-            poster_src: (movie.poster_path == null ? placeholder : "https://image.tmdb.org/t/p/w185_and_h278_bestv2" + movie.poster_path),
+            poster_src: (movie.poster_path == null ? placeholder : "https://image.tmdb.org/t/p/w600_and_h900_bestv2" + movie.poster_path),
             production: movie.production_companies,
             production_countries: movie.production_countries,
             genre: movie.genres,
