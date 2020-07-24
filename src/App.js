@@ -19,8 +19,9 @@ class App extends Component {
 
     this.state ={
       searchTerm: 'AVENGERS: ENDGAME',
-      
     }
+
+    this.inputRef = React.createRef()
 
 
   this.performSearch()
@@ -81,12 +82,21 @@ class App extends Component {
     event.preventDefault()
     this.performSearch()
   }
+
+
+  componentDidMount(){
+ 
+    this.inputRef.current.focus()
+  }
  
 
   render() {
     const jer ={
       background:'linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url('+this.state.backdrop+')'
     }
+
+   
+
     return (
       <Router>
       <div>
@@ -94,9 +104,9 @@ class App extends Component {
       
       <Route path="/Movie-Database-Site-with-React-JS" exact >
   
-      <div className="main" style={jer}>
+      <div className="main" style={jer} >
         <form className="search-bar" onSubmit={this.submitHandler}>
-        <input onChange={this.searchChangeHandler} className="search-bar__input" placeholder="Enter Movie Name" type="text"/>
+        <input onChange={this.searchChangeHandler} ref={this.inputRef} className="search-bar__input" placeholder="Enter Movie Name" type="text"/>
         <input  type="submit" className="search-bar__button" value="Search "/>
         </form>
         <div className="movies">
