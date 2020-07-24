@@ -10,6 +10,7 @@ import Footer from './components/Footer'
 //pages
 
 import placeholder from './images/placeholderImage.jpg'
+import InputSearch from './components/InputSearch'
 
 
 class App extends Component {
@@ -56,7 +57,7 @@ class App extends Component {
 
 
 //Search for more info
-  finalSeach = (searchID = this.state.movieID) =>{
+  finalSeach = () =>{
 
     const urlString = `https://api.themoviedb.org/3/movie/${this.state.movieID}?api_key=ad8a2a3e22a31453b48785c80f462afd`
     $.ajax({
@@ -106,12 +107,12 @@ class App extends Component {
     this.performSearch()
   }
 
-
+  //auto focus on seearch input
   componentDidMount(){
     this.inputRef.current.focus()
   }
 
-  //Render after fetching the movie ID to be able successfully excecute the finalSearch
+  //Render the final outcome after fetching the movie ID to be able successfully excecute the finalSearch
   componentDidUpdate(){
     this.finalSeach()
   }
@@ -130,13 +131,9 @@ class App extends Component {
       <Route path="/Movie-Database-Site-with-React-JS" exact >
   
       <div className="main" style={jer} >
-        <form className="search-bar" onSubmit={this.submitHandler}>
-        <input onChange={this.searchChangeHandler} ref={this.inputRef} className="search-bar__input" placeholder="Enter Movie Name" type="text"/>
-        <input  type="submit" className="search-bar__button" value="Search "/>
-        </form>
+       <InputSearch inputRef={this.inputRef} searchChangeHandler={this.searchChangeHandler} submitHandler={this.submitHandler}></InputSearch>
         <div className="movies">
-        <div className="movies__row">
-         
+          <div className="movies__row">
              <div className="movies__item">
    
                <div className="movies__data">
@@ -146,45 +143,30 @@ class App extends Component {
                <div className="movies__data">
    
                  <div className="movies__description">
+
                  <div className="movies__title" title={this.state.original_title}>{this.state.original_title}</div>
                  
-                 <div className="movies__overview">
-                   {this.state.overview}
-                   </div> 
+                 <div className="movies__overview"> {this.state.overview} </div> 
+                 
                  <div className="movies__stats">
-                   <div className="movies__stats-data">
-                   Vote average:  
-                 
-                 <span>
-                 {this.state.vote_average}
-                 </span>
+                    <div className="movies__stats-data">
+                    Vote average: <span>{this.state.vote_average}</span>
+                    </div>
+
+                    <div className="movies__stats-data">
+                    Release Date: <span> {this.state.release}</span>
+                    </div>
+
+                    <div className="movies__stats-data">
+                    Language: <span>{this.state.release}</span>
                    </div>
+
                    <div className="movies__stats-data">
-                   Release Date:  
-                 
-                 <span>
-                 {this.state.release}
-                 </span>
+                   Popularity: <span>{this.state.release} </span>
                    </div>
-                   <div className="movies__stats-data">
-                   Language:  
-                 
-                 <span>
-                   {this.state.release}
-                 </span>
-                   </div>
-                   <div className="movies__stats-data">
-                   Popularity:  
-                   <span>
-                   {this.state.release}
-                   </span>
-                 
-                   </div>
-                   
                  </div>
            
                  </div>
-                 
               
                  </div>
    
