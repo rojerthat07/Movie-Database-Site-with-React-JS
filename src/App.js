@@ -30,7 +30,7 @@ class App extends Component {
 
 //Initial search for the movie
   performSearch(searchTerm = this.state.searchTerm){
-    console.log("Perform Search", searchTerm)
+ 
     const urlString = 'https://api.themoviedb.org/3/search/movie?api_key=ad8a2a3e22a31453b48785c80f462afd&query='+ searchTerm
     $.ajax({
       url: urlString,
@@ -65,7 +65,8 @@ class App extends Component {
       success: (searchResults) =>{
 
         const results = [searchResults]
-
+       
+        
         results.forEach( movie =>{
           this.setState({
             original_title: movie.original_title,
@@ -112,10 +113,16 @@ class App extends Component {
     this.inputRef.current.focus()
   }
 
-  //Render the final outcome after fetching the movie ID to be able successfully excecute the finalSearch
-  componentDidUpdate(){
-    this.finalSeach()
+ 
+  componentDidUpdate(prevProps,prevState){
+    //comparing previous state to current state, this fixes the infinite loop and only execute if there is difference between state
+    if(prevState.movieID !== this.state.movieID){
+       //Render the final outcome after fetching the movie ID to be able successfully excecute the finalSearch
+      this.finalSeach()
+    }
+
   }
+
  
 
   render() {
