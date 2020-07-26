@@ -78,9 +78,9 @@ class App extends Component {
             production_countries: movie.production_countries,
             genre: movie.genres,
             release: movie.release_date,
-            vote_average: /*movie.vote_average*/(movie.vote_average === 'undefined' || movie.vote_average === 0 ? '-' : movie.vote_average + ' / 10'),
+            vote_average: (movie.vote_average === 'undefined' || movie.vote_average === 0 ? '-' : movie.vote_average + ' / 10'),
             runtime: movie.runtime,
-            revenue: this.numberWithCommas(movie.revenue),
+            revenue:(movie.revenue === 'undefined' || movie.revenue === 0 ? '-': this.numberWithCommas(movie.revenue)),
             backdrop: (movie.backdrop_path == null ? placeholder : "https://image.tmdb.org/t/p/w1280_and_h720_bestv2" + movie.backdrop_path)
           })
          
