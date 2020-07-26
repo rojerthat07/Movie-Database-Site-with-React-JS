@@ -56,7 +56,7 @@ class App extends Component {
   }
 
 
-//Search for more info
+//Final Search for more info
   finalSeach = () =>{
 
     const urlString = `https://api.themoviedb.org/3/movie/${this.state.movieID}?api_key=ad8a2a3e22a31453b48785c80f462afd`
@@ -66,7 +66,7 @@ class App extends Component {
 
         const results = [searchResults]
        
-        
+        console.log(searchResults)
         results.forEach( movie =>{
           this.setState({
             original_title: movie.original_title,
@@ -80,7 +80,7 @@ class App extends Component {
             release: movie.release_date,
             vote_average: movie.vote_average,
             runtime: movie.runtime,
-            revenue: movie.revenue,
+            revenue: this.numberWithCommas(movie.revenue),
             backdrop: (movie.backdrop_path == null ? placeholder : "https://image.tmdb.org/t/p/w1280_and_h720_bestv2" + movie.backdrop_path)
           })
          
@@ -123,6 +123,11 @@ class App extends Component {
 
   }
 
+
+ numberWithCommas = (x = this.state.revenue) => {
+    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}
+
  
 
   render() {
@@ -157,19 +162,19 @@ class App extends Component {
                  
                  <div className="movies__stats">
                     <div className="movies__stats-data">
-                    Vote average: <span>{this.state.vote_average}</span>
+                    Vote Average: <span>{this.state.vote_average}</span>
                     </div>
 
                     <div className="movies__stats-data">
-                    Release Date: <span> {this.state.release}</span>
+                    Running Time: <span> {this.state.runtime}</span>
                     </div>
 
                     <div className="movies__stats-data">
-                    Language: <span>{this.state.release}</span>
+                    Box Office: <span>${this.state.revenue}</span>
                    </div>
 
                    <div className="movies__stats-data">
-                   Popularity: <span>{this.state.release} </span>
+                   Original Release: <span>{this.state.release} </span>
                    </div>
                  </div>
            
