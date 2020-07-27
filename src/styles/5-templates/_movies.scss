@@ -27,12 +27,14 @@
             border-radius: 10px;
             display: grid;
             grid-template-columns: 5fr 7fr;
+         
   
             .movies__data{  
                 img{
                     width: 100%;
                     display: block;
-                    margin: auto;
+                  
+              
                     @include tablet{
                         width: 40%;
                     }
