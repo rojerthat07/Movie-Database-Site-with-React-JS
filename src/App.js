@@ -19,8 +19,11 @@ class App extends Component {
     super(props)
 
     this.state ={
-      searchTerm: 'AVENGERS: ENDGAME',
+      searchTerm: 'AVENGERS: ENDGAME'
+     
     }
+   
+
 
   this.inputRef = React.createRef()
 
@@ -77,14 +80,34 @@ class App extends Component {
             production: movie.production_companies,
             production_countries: movie.production_countries,
             genre: movie.genres,
+            status:movie.status,
             release: movie.release_date,
             vote_average: (movie.vote_average === 'undefined' || movie.vote_average === 0 ? '-' : movie.vote_average + ' / 10'),
             runtime: movie.runtime,
-            revenue:(movie.revenue === 'undefined' || movie.revenue === 0 ? '-': this.numberWithCommas(movie.revenue)),
-            backdrop: (movie.backdrop_path == null ? placeholder : "https://image.tmdb.org/t/p/w1280_and_h720_bestv2" + movie.backdrop_path)
+            revenue:(movie.revenue === 'undefined' || movie.revenue === 0 ? '-': '$' + this.numberWithCommas(movie.revenue)),
+            backdrop: (movie.backdrop_path == null ? "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSols5HZxlQWyS9JY5d3_L9imbk0LiziHiyDtMZLHt_UNzoYUXs2g" : "https://image.tmdb.org/t/p/w1280_and_h720_bestv2" + movie.backdrop_path)
           })
+
+
+
+
+        //Getting the list of genres in an array
+          let genreArray = []
+
+          movie.genres.map( (e,i) =>{
+            genreArray.push(e.name)
+            return null
+          })
+
+          this.setState({
+            genres: genreArray.join(', ')
+          })
+       
          
         })
+
+       
+
 
       },
       error: (xhr,status,err) =>{
@@ -132,6 +155,9 @@ class App extends Component {
  
 
   render() {
+
+   
+
     const jer ={
       background:'linear-gradient(rgba(0,0,0,0.9),rgba(0,0,0,0.3),rgba(0,0,0,0.3),rgba(0,0,0,0.9)),url('+this.state.backdrop+')'
     }
@@ -154,30 +180,46 @@ class App extends Component {
                </div>
    
                <div className="movies__data">
+
    
                  <div className="movies__description">
+                   
 
                  <div className="movies__title" title={this.state.original_title}>{this.state.original_title}</div>
-                 
-                 <div className="movies__overview"> {this.state.overview} </div> 
-                 
+
+                 <div className="movies__genre">{this.state.genres}</div>
+                 <hr></hr>
                  <div className="movies__stats">
                     <div className="movies__stats-data">
                     Vote Average: <span>{this.state.vote_average}</span>
                     </div>
 
                     <div className="movies__stats-data">
-                    Running Time: <span> {this.state.runtime}</span>
+                    Running Time: <span> {this.state.runtime} minutes</span>
                     </div>
 
                     <div className="movies__stats-data">
-                    Box Office: <span>${this.state.revenue}</span>
+                    Box Office: <span>{this.state.revenue}</span>
                    </div>
 
                    <div className="movies__stats-data">
                    Original Release: <span>{this.state.release} </span>
                    </div>
+                   <div className="movies__stats-data">
+                   Current Status: <span>{this.state.status} </span>
+                   </div>
+                   <div className="movies__stats-data">
+                    Homepage: <span style={{fontSize:'.7em'}}>{this.state.homepage} </span>
+                   </div>
                  </div>
+                 <hr></hr>
+               <div className="movies__genre">{this.state.tagline}</div>
+                 
+                 <div className="movies__overview"> {this.state.overview} </div> 
+                
+
+                 
+             
            
                  </div>
               

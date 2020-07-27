@@ -42,7 +42,7 @@
                     padding:1em;
                     .movies__title{
                         font-size: 3em;
-                        margin:.5em 0;
+                        margin:.5em 0 0 0;
                         margin-top: 0;
                         min-width: 40px;
                         font-weight: bold;
@@ -58,17 +58,24 @@
                             font-size: .8em;
                             min-height: 100px; 
                         } 
-                        
-                       
                 }
+
+
+                .movies__genre{
+                    font-weight: lighter;
+                    font-size: 1.7em;
+                    color:$color1;
+                }
+
                 .movies__stats{
-                    font-size: 1.5em;
+                    font-size: 1.2em;
                     display: grid;
                     grid-gap: .5em;
                     grid-template-columns: 1fr 1fr;
                     font-weight: lighter;
                     .movies__stats-data{
                         span{
+                            font-size: 1.5em;
                             display: block;
                             color: $color1;
                         }

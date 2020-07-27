@@ -6,6 +6,7 @@
     grid-gap: 1em;
     width:90%;
     margin: 0 auto;
+   
 
     @include mini-laptop{
         grid-template-columns: 8fr 2fr;
@@ -22,9 +23,8 @@
         width: 50%;
         transition: .8s;
         text-align: center;
-        &:hover{
-            color:white;
-        }
+        color:white;
+        font-weight: lighter;
       
         &:focus{
             width: 100%;

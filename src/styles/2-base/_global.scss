@@ -11,3 +11,13 @@ body{
     background-attachment: fixed;
 
 }
+
+::placeholder{
+    color:rgb(163, 151, 151);
+   
+}
+
+hr{
+    border-width: thin;
+    border: 1px solid rgb(129, 129, 129);
+}
