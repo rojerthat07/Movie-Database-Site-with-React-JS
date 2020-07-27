@@ -17,8 +17,6 @@
         width:70%;
     }
     .movies__row{
-        border-radius: 10px;
-  
         position: relative;
         width: 100%;
         margin: auto;
@@ -26,8 +24,9 @@
        
     
         .movies__item{
+            border-radius: 10px;
             display: grid;
-            grid-template-columns: 1fr 2fr;
+            grid-template-columns: 5fr 7fr;
   
             .movies__data{  
                 img{
