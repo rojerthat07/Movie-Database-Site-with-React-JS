@@ -5,9 +5,6 @@ import $ from 'jquery'
 //Styles
 import './main.scss'
 
-//layout
-import Footer from './components/Footer'
-//pages
 
 import placeholder from './images/placeholderImage.jpg'
 import InputSearch from './components/InputSearch'
@@ -75,7 +72,7 @@ class App extends Component {
             original_title: movie.original_title,
             tagline: movie.tagline,
             overview: movie.overview,
-            homepage: movie.homepage,
+            homepage: (movie.homepage === 'undefined' || movie.homepage === 0 ? '-' : movie.homepage),
             poster_src: (movie.poster_path == null ? placeholder : "https://image.tmdb.org/t/p/w600_and_h900_bestv2" + movie.poster_path),
             production: movie.production_companies,
             production_countries: movie.production_countries,
@@ -216,9 +213,10 @@ class App extends Component {
                <div className="movies__genre">{this.state.tagline}</div>
                  
                  <div className="movies__overview"> {this.state.overview} </div> 
-                
-
-                 
+                <hr></hr>
+                <div className="footer">
+           <p>© 2020 Jer Carlo Catallo | All rights reserved. </p>
+        </div>
              
            
                  </div>
@@ -232,7 +230,6 @@ class App extends Component {
         </div>
         </Route>
 
-        <Footer />
  
       </div>
       </Router>
