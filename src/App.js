@@ -8,6 +8,7 @@ import './main.scss'
 
 import placeholder from './images/placeholderImage.jpg'
 import InputSearch from './components/InputSearch'
+import MovieCard from './components/MovieCard'
 
 
 class App extends Component {
@@ -59,9 +60,9 @@ class App extends Component {
       success: (searchResults) =>{
 
         const results = [searchResults]
-       
-        console.log(searchResults)
+      
         results.forEach( movie =>{
+          //Pushing Data to State
           this.setState({
             original_title: movie.original_title,
             tagline: movie.tagline,
@@ -145,65 +146,7 @@ class App extends Component {
   
       <div className="main" style={jer} >
        <InputSearch inputRef={this.inputRef} searchChangeHandler={this.searchChangeHandler} submitHandler={this.submitHandler}></InputSearch>
-        <div className="movies">
-          <div className="movies__row">
-             <div className="movies__item">
-   
-               <div className="movies__data">
-                 <img src={this.state.poster_src} alt="poster"/>
-               </div>
-   
-               <div className="movies__data">
-
-                 <div className="movies__description">
-                  
-                 <div className="movies__title" title={this.state.original_title}>{this.state.original_title}</div>
-
-                 <div className="movies__meta">{this.state.genres}</div>
-                 <hr></hr>
-                 <div className="movies__stats">
-                    <div className="movies__stats-data">
-                    Vote Average: <span>{this.state.vote_average}</span>
-                    </div>
-
-                    <div className="movies__stats-data">
-                    Running Time: <span> {this.state.runtime} minutes</span>
-                    </div>
-
-                    <div className="movies__stats-data">
-                    Box Office: <span>{this.state.revenue}</span>
-                   </div>
-
-                   <div className="movies__stats-data">
-                   Original Release: <span>{this.state.release} </span>
-                   </div>
-                   <div className="movies__stats-data">
-                   Current Status: <span>{this.state.status} </span>
-                   </div>
-                   <div className="movies__stats-data">
-                   Homepage:
-                     <a href={this.state.homepage} target="_blank" rel="noopener noreferrer">   <span style={{fontSize:'.7em'}}>{this.state.homepage} </span></a>
-                 
-                   </div>
-                 </div>
-               
-                 <hr></hr>
-               <div className="movies__meta">{this.state.tagline}</div>
-                 
-                 <div className="movies__overview"> {this.state.overview} </div> 
-                <hr></hr>
-                <div className="footer">
-           <p>© 2020 Jer Carlo Catallo | All rights reserved. </p>
-        </div> 
-           
-                 </div>
-              
-                 </div>
-   
-             </div>
-    
-         </div>
-        </div>
+        <MovieCard state={this.state}></MovieCard>
         </div>
         </Route>
  

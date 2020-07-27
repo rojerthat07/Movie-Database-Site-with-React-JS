@@ -6,12 +6,6 @@
     grid-gap: 1em;
     width:90%;
     margin: 0 auto;
-   
-
-    @include mini-laptop{
-        grid-template-columns: 8fr 2fr;
-    }
-    
  
     .search-bar__input{
         background-color: transparent;
@@ -20,9 +14,8 @@
         margin:1em auto 0em auto;
         border: none;
         border-bottom: 1px solid rgb(231, 231, 231);
-        width: 50%;
+        width: 100%;
         transition: .8s;
-        text-align: center;
         color:white;
         font-weight: lighter;
       
