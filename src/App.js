@@ -17,13 +17,9 @@ class App extends Component {
 
     this.state ={
       searchTerm: 'AVENGERS: ENDGAME'
-     
     }
-   
-
 
   this.inputRef = React.createRef()
-
   this.performSearch()
   }
 
@@ -43,7 +39,7 @@ class App extends Component {
           this.setState({
             movieID: movie.id
           })
-        
+      
         })
 
       },
@@ -52,9 +48,7 @@ class App extends Component {
       }
     })
 
-
   }
-
 
 //Final Search for more info
   finalSeach = () =>{
@@ -85,9 +79,6 @@ class App extends Component {
             backdrop: (movie.backdrop_path == null ? "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSols5HZxlQWyS9JY5d3_L9imbk0LiziHiyDtMZLHt_UNzoYUXs2g" : "https://image.tmdb.org/t/p/w1280_and_h720_bestv2" + movie.backdrop_path)
           })
 
-
-
-
         //Getting the list of genres in an array
           let genreArray = []
 
@@ -100,11 +91,7 @@ class App extends Component {
             genres: genreArray.join(', ')
           })
        
-         
         })
-
-       
-
 
       },
       error: (xhr,status,err) =>{
@@ -114,13 +101,11 @@ class App extends Component {
 
   }
 
-
   searchChangeHandler = (e) =>{
     const searchTerm = e.target.value
     this.setState({
       searchTerm: searchTerm
     })
-
   }
 
   submitHandler = (event) =>{
@@ -140,20 +125,13 @@ class App extends Component {
        //Render the final outcome after fetching the movie ID to be able successfully excecute the finalSearch
       this.finalSeach()
     }
-
   }
-
 
  numberWithCommas = (x = this.state.revenue) => {
     return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 }
 
-
- 
-
   render() {
-
-   
 
     const jer ={
       background:'linear-gradient(rgba(0,0,0,0.9),rgba(0,0,0,0.3),rgba(0,0,0,0.3),rgba(0,0,0,0.9)),url('+this.state.backdrop+')'
@@ -162,7 +140,6 @@ class App extends Component {
     return (
       <Router>
       <div>
-    
       
       <Route path="/Movie-Database-Site-with-React-JS" exact >
   
@@ -178,13 +155,11 @@ class App extends Component {
    
                <div className="movies__data">
 
-   
                  <div className="movies__description">
-                   
-
+                  
                  <div className="movies__title" title={this.state.original_title}>{this.state.original_title}</div>
 
-                 <div className="movies__genre">{this.state.genres}</div>
+                 <div className="movies__meta">{this.state.genres}</div>
                  <hr></hr>
                  <div className="movies__stats">
                     <div className="movies__stats-data">
@@ -206,18 +181,20 @@ class App extends Component {
                    Current Status: <span>{this.state.status} </span>
                    </div>
                    <div className="movies__stats-data">
-                    Homepage: <span style={{fontSize:'.7em'}}>{this.state.homepage} </span>
+                   Homepage:
+                     <a href={this.state.homepage} target="_blank" rel="noopener noreferrer">   <span style={{fontSize:'.7em'}}>{this.state.homepage} </span></a>
+                 
                    </div>
                  </div>
+               
                  <hr></hr>
-               <div className="movies__genre">{this.state.tagline}</div>
+               <div className="movies__meta">{this.state.tagline}</div>
                  
                  <div className="movies__overview"> {this.state.overview} </div> 
                 <hr></hr>
                 <div className="footer">
            <p>© 2020 Jer Carlo Catallo | All rights reserved. </p>
-        </div>
-             
+        </div> 
            
                  </div>
               
@@ -229,7 +206,6 @@ class App extends Component {
         </div>
         </div>
         </Route>
-
  
       </div>
       </Router>

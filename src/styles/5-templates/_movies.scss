@@ -61,7 +61,7 @@
                 }
 
 
-                .movies__genre{
+                .movies__meta{
                     font-weight: lighter;
                     font-size: 1.7em;
                     color:$color1;
@@ -74,6 +74,10 @@
                     grid-template-columns: 1fr 1fr;
                     font-weight: lighter;
                     .movies__stats-data{
+                        a{
+                            text-decoration: none;
+                           
+                        }
                         span{
                             font-size: 1.5em;
                             display: block;
