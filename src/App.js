@@ -60,7 +60,7 @@ class App extends Component {
       success: (searchResults) =>{
 
         const results = [searchResults]
-        console.log(searchResults)
+      
         results.forEach( movie =>{
           //Pushing Data to State
           this.setState({
