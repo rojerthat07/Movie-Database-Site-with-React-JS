@@ -60,14 +60,14 @@ class App extends Component {
       success: (searchResults) =>{
 
         const results = [searchResults]
-      
+        console.log(searchResults)
         results.forEach( movie =>{
           //Pushing Data to State
           this.setState({
             original_title: movie.original_title,
             tagline: movie.tagline,
             overview: movie.overview,
-            homepage: (movie.homepage === 'undefined' || movie.homepage === 0 ? '-' : movie.homepage),
+            homepage: (movie.homepage === '' || movie.homepage === 0 ? '-' : movie.homepage),
             poster_src: (movie.poster_path == null ? placeholder : "https://image.tmdb.org/t/p/w600_and_h900_bestv2" + movie.poster_path),
             production: movie.production_companies,
             production_countries: movie.production_countries,
