@@ -6,4 +6,7 @@
     justify-content: center;
     height: 8vh;
     font-size: .8em;
+    @include laptop{
+        font-size: .7em;
+      }
 }

@@ -1,4 +1,10 @@
 //MEDIA QUERIES
+@mixin large-desktop{
+    @media (min-width:#{$breakpoint-desktop}){
+        @content;
+    }
+}
+
 @mixin desktop{
     @media (max-width:#{$breakpoint-desktop}){
         @content;

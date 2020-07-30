@@ -52,8 +52,8 @@ const MovieCard = (props) => {
               <hr></hr>
               <div className="footer">
                
-         <p>© 2020 Jer Carlo Catallo | All rights reserved | Release Version 0.2 </p>
-         <hr/>
+         <p>© 2020 Jer Carlo Catallo | All rights reserved | Release Version 0.3 </p>
+       
          
       </div> 
          
