@@ -8,13 +8,14 @@ import "./main.scss";
 import placeholder from "./images/placeholderImage.jpg";
 import InputSearch from "./components/InputSearch";
 import MovieCard from "./components/MovieCard";
+import MovieRow from "./components/MovieRow";
 
 class App extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      searchTerm: "x men dark phoenix",
+      searchTerm: "Avengers",
     };
 
     this.inputRef = React.createRef();
@@ -30,15 +31,24 @@ class App extends Component {
       url: urlString,
       success: (searchResults) => {
         const results = searchResults.results;
+        var movieRows = [];
 
         results.forEach((movie) => {
-          this.setState({
-            movieID: movie.id,
-          });
+          movie.poster_src =
+            movie.poster_path == null
+              ? placeholder
+              : "https://image.tmdb.org/t/p/w600_and_h900_bestv2" +
+                movie.poster_path; //"https://image.tmdb.org/t/p/w185_and_h278_bestv2" + movie.poster_path
+          const movieRow = <MovieRow key={movie.id} movie={movie} />;
+          movieRows.push(movieRow);
+        });
+
+        this.setState({
+          rows: movieRows,
         });
       },
       error: (xhr, status, err) => {
-        console.error("Failed to fetch data in Perform Search");
+        console.error("Failed to fetch data");
       },
     });
   }
@@ -153,7 +163,7 @@ class App extends Component {
                 searchChangeHandler={this.searchChangeHandler}
                 submitHandler={this.submitHandler}
               ></InputSearch>
-              <MovieCard state={this.state}></MovieCard>
+              {this.state.rows}
             </div>
           </Route>
         </div>
